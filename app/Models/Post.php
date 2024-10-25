@@ -3,10 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Arr;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Post extends Model // langsung terhubung dengan tabel posts
+class Post extends Model
 {
-    protected $fillable = ['title','author','body'];
+    use HasFactory, Notifiable;
+    // supaya dapat diisi secara bersama oleh user
+    protected $fillable = ['title','author','slug','body'];
 }
-?>

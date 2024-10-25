@@ -18,10 +18,10 @@ Route::get('/blog', function () {
     return view('blog', ["title" => "Blog", "posts" => Post::all()]);
 });
 
-Route::get('/blog/{post}', function (Post $post) {
+Route::get('/blog/{post:slug}', function (Post $post) {
         // $post = Post::find($id);
-        
         return view('blogs',['title' => 'Single post', 'post' => $post]);
+        dd($post);
 });
 
 Route::get('/contact', function () {
