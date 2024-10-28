@@ -7,7 +7,7 @@
         <h2 class="mb-1 text-3xl tracking-tight font-bold text-gray-900">{{ $post->title }}</h2>
         
         <div>
-            <span class="text-black">Create by.</span><a class="hover:underline text-base text-gray-500" href="/author/{{ $post->author->username }}">{{ $post->author->name }}</a> | <a class="hover:underline text-base text-gray-500" href="/category/{{ $post->category->slug }}">{{ $post->category->name }}</a> | {{ $post->created_at->diffForHumans() }}
+            <span class="text-black">Create by.</span><a class="hover:underline text-base text-gray-500" href="/author/{{ $post->author->username }}">{{ $post->author->name }}</a> | <a class="hover:underline text-base text-gray-500" href="/blog?category={{ $post->category->slug }}">{{ $post->category->name }}</a> | {{ $post->created_at->diffForHumans() }}
         </div>
 
 
