@@ -13,6 +13,8 @@ class Post extends Model
     // supaya dapat diisi secara bersama oleh user
     protected $fillable = ['title','author_id','slug','body'];
 
+    protected $with = ['author','category'];
+
     // relasi antar model
     public function author(): BelongsTo
     {
