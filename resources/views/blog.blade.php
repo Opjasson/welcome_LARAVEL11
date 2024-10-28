@@ -4,7 +4,7 @@
     <div class="py-4 px-4 mx-auto max-w-screen-xl lg:px-6">
         <div class="mx-auto max-w-screen-md sm:text-center">
 
-            <form action="#">
+            <form>
                 @if (request('category'))
                     <input type="hidden" name="category" value="{{ request('category') }}">
                 @endif
@@ -37,11 +37,11 @@
         </div>
     </div>
 
-    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 ">
 
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 ">
 
-            @foreach ($posts as $post)
+            @forelse ($posts as $post)
                 <article
                     class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                     <div class="flex justify-between items-center mb-5 text-gray-500">
@@ -82,7 +82,13 @@
                     </a>
 
                 </article>
-            @endforeach
+                @empty
+                <div class="w-fit">
+                    <p class="font-semibold text-3xl my-4">Articel Not Found</p>
+                    <a class="text-blue-600 underline underline-offset-4" href="/blog">&laquo; Back to blog</a>
+                </div>
+                
+            @endforelse
 
         </div>
     </div>
