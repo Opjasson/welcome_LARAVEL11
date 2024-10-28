@@ -38,8 +38,8 @@
     </div>
 
     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 ">
-
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 ">
+        {{ $posts->links() }}
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 my-5">
 
             @forelse ($posts as $post)
                 <article
@@ -91,6 +91,7 @@
             @endforelse
 
         </div>
+        {{ $posts->links() }}
     </div>
 
 
